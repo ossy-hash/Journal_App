@@ -40,3 +40,73 @@ A modern, minimal journaling app built with Flutter, inspired by Notion and Obsi
 - **UI**: Custom premium components
 
 ## Architecture
+
+```
+lib/
+├── core/
+│   ├── constants/          # App-wide constants
+│   ├── errors/             # Error handling utilities
+│   ├── extensions/         # Dart extension methods
+│   ├── models/             # Data models
+│   ├── router/             # GoRouter configuration & guards
+│   ├── services/           # Database & storage services
+│   ├── theme/              # App theme (light/dark)
+│   └── utils/              # Connectivity, validation, date formatting
+├── features/
+│   ├── auth/               # Authentication (login, register, forgot password)
+│   ├── journal/            # Journal CRUD, editor, favorites, search, sync
+│   ├── settings/           # App settings
+│   └── sidebar/            # Navigation drawer
+├── shared/
+│   └── widgets/            # Reusable UI components
+├── app.dart                # App entry widget
+└── main.dart               # Main entry point
+```
+
+## Setup
+
+### Prerequisites
+- Flutter SDK >=3.44.0
+- Dart SDK ^3.12.0
+- Supabase account (for cloud sync)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ossy-hash/Journal_App.git
+   cd Journal_App
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Configure Supabase** (optional, required for cloud sync)
+   - Create a Supabase project
+   - Add your Supabase URL and anon key to environment or config
+
+4. **Run the app**
+   ```bash
+   flutter run
+   ```
+
+## Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| flutter_riverpod | State management |
+| supabase_flutter | Cloud backend & auth |
+| hive_flutter | Local storage |
+| flutter_quill | Rich text editor |
+| go_router | Navigation & routing |
+| google_fonts | Custom typography |
+| connectivity_plus | Network monitoring |
+| shimmer | Loading animations |
+| intl | Date formatting & i18n |
+| uuid | Unique ID generation |
+
+## License
+
+MIT
